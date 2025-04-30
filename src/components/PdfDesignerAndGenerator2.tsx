@@ -3,7 +3,8 @@ import { Designer, Form } from "@pdfme/ui";
 import { generate } from "@pdfme/generator";
 import { text, image, barcodes } from "@pdfme/schemas";
 import { PDFDocument } from "pdf-lib";
-import type { Template, Plugin } from '@pdfme/common';
+import type { Template } from '@pdfme/common';
+
 
 // const plugins: Record<string, Plugin> = {
 //   text,
@@ -14,7 +15,7 @@ const plugins = {
   text,
   image,
   qrcode: barcodes.qrcode,
-} as Record<string, Plugin<any>>;
+} 
 const createBlankPdf = async (): Promise<Uint8Array> => {
   const pdfDoc = await PDFDocument.create();
   const page = pdfDoc.addPage([595, 842]);
